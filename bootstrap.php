@@ -5,9 +5,6 @@ use Bluehost\SiteMeta; // From plugin
 
 use function NewfoldLabs\WP\ModuleLoader\register as registerModule;
 
-// TODO - remove this, for some reason autoloading is not working without it
-require_once __DIR__ . '/includes/CustomerBluehost.php';
-
 /**
  * Register the data module
  */

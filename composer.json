@@ -29,10 +29,11 @@
             "NewFoldLabs\\WP\\Module\\CustomerBluehost\\": "includes"
         },
         "files": [
-            "bootstrap.php"
+            "bootstrap.php",
+            "includes/CustomerBluehost.php"
         ]
     },
     "require": {
-        "newfold-labs/wp-module-data": "^2.0.0"
+        "newfold-labs/wp-module-data": "^2.2.2"
     }
 }

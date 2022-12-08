@@ -1,5 +1,5 @@
 <?php
-namespace NewfoldLabs\WP\Module\Customer;
+namespace NewfoldLabs\WP\Module\CustomerBluehost;
 
 use Bluehost\AccessToken;
 use Bluehost\SiteMeta;
@@ -8,7 +8,7 @@ use NewfoldLabs\WP\Module\Data\Helpers\Transient;
 /**
  * Helper class for gathering and formatting customer data
  */
-class Bluehost {
+class CustomerBluehost {
 
 	/**
 	 * Normalized, monthly soft deleted

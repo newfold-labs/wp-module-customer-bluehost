@@ -1,9 +1,12 @@
 <?php
-use NewfoldLabs\WP\Module\CustomerBluehost;
+use NewfoldLabs\WP\Module\CustomerBluehost\CustomerBluehost;
 use NewfoldLabs\WP\ModuleLoader\Container;
 use Bluehost\SiteMeta; // From plugin
 
 use function NewfoldLabs\WP\ModuleLoader\register as registerModule;
+
+// TODO - remove this, for some reason autoloading is not working without it
+require_once __DIR__ . '/includes/CustomerBluehost.php';
 
 /**
  * Register the data module
@@ -18,9 +21,8 @@ if ( function_exists( 'add_action' ) ) {
 				array(
 					'name'     => 'newfold-customer-bluehost',
 					'label'    => __( 'Customer Bluehost', 'newfold-customer-bluehost' ),
-					'callback' => function () {
-						$module = new Customer\Bluehost();
-						$module->start();
+					'callback' => function ( Container $container ) {
+						new CustomerBluehost( $container );
 					},
 					'isActive' => true,
 					'isHidden' => true,

@@ -59,18 +59,17 @@ class CustomerBluehost {
 	 */
 	public static function collect() {
 
-		// check if bh_cdata is in option (prefered)
+		// check if bh_cdata is stale
+		if ( self::is_stale() ) {
+			self::refresh_data();
+		}
+
+		// check if bh_cdata is in option (prefered) - always fresh
 		$data = \get_option( self::CUST_DATA );
 
-		// if found
+		// exists and no need for additional checks
 		if ( ! empty( $data ) ) {
-
-			// if stale, refresh data
-			if ( self::is_stale() ) {
-				self::refresh_data();
-			}
-			
-			return $data; // return data
+			return $data;
 		}
 
 		// If no option found, check for transient value

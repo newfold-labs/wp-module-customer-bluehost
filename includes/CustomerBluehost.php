@@ -52,6 +52,8 @@ class CustomerBluehost {
 	 */
 	private const RETRY_COUNT = 'bh_cdata_retry_count';
 
+	private static $is_provided = false;
+
 	/**
 	 * Collect customer data
 	 *
@@ -151,9 +153,15 @@ class CustomerBluehost {
 	 */
 	private static function save_data( $data ) {
 
-		// save to option and set new expiry
+		// save data to option
 		\update_option( self::CUST_DATA, $data );
-		\update_option( self::CUST_DATA_EXP, time() + MONTH_IN_SECONDS ); // set expiration to now + 1 month (30 days)
+
+		// set expiration
+		if ( self::$is_provided ) {
+			\update_option( self::CUST_DATA_EXP, time() + DAY_IN_SECONDS ); // set expiration to now + 1 day
+		} else {
+			\update_option( self::CUST_DATA_EXP, time() + MONTH_IN_SECONDS ); // set expiration to now + 1 month (30 days)
+		}
 	}
 
 	/**
@@ -175,6 +183,7 @@ class CustomerBluehost {
 					&& is_object( $decoded = json_decode( $provided ) )
 				) {
 					$provided = $decoded;
+					self::$is_provided = true;
 					\delete_option( $key );
 				}
 			break;
@@ -252,6 +261,7 @@ class CustomerBluehost {
 		}
 
 		self::clear_throttle();
+		self::$is_provided = false;
 		return json_decode( wp_remote_retrieve_body( $response ) );
 	}
 

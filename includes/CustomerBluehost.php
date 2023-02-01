@@ -391,10 +391,8 @@ class CustomerBluehost {
 				$info['plan_subtype'] = $response->plan->subtype;
 			}
 
-			if ( property_exists( $response->plan, 'username' ) ) {
-				$info['username'] = $response->plan->username;
-			}
-
+			// get username from server rather than $response->plan->username;
+			$info['username'] = get_current_user();
 		}
 
 		return $info;

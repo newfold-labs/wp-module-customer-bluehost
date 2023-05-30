@@ -9,28 +9,24 @@
             "only": [
                 "newfold-labs/*"
             ]
-        },
-        {
-            "type": "composer",
-            "url": "https://bluehost.github.io/satis/",
-            "only": [
-                "bluehost/*"
-            ]
         }
     ],
     "authors": [
         {
             "name": "Evan Mullins",
-            "email": "evan@bluehost.com"
+            "homepage": "https://evanmullins.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "NewFoldLabs\\WP\\Module\\CustomerBluehost\\": "includes"
+            "NewfoldLabs\\WP\\Module\\CustomerBluehost\\": "includes"
         },
         "files": [
             "bootstrap.php",
-            "includes/CustomerBluehost.php"
+            "includes/AccessToken.php",
+            "includes/CustomerBluehost.php",
+            "includes/ResponseUtilities.php",
+            "includes/SiteMeta.php"
         ]
     },
     "require": {

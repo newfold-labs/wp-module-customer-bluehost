@@ -1,7 +1,7 @@
 <?php
 use NewfoldLabs\WP\Module\CustomerBluehost\CustomerBluehost;
+use NewfoldLabs\WP\Module\CustomerBluehost\SiteMeta;
 use NewfoldLabs\WP\ModuleLoader\Container;
-use Bluehost\SiteMeta; // From plugin
 
 use function NewfoldLabs\WP\ModuleLoader\register as registerModule;
 

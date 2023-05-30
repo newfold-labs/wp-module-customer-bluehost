@@ -19,7 +19,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "NewFoldLabs\\WP\\Module\\CustomerBluehost\\": "includes"
+            "NewfoldLabs\\WP\\Module\\CustomerBluehost\\": "includes"
         },
         "files": [
             "bootstrap.php"

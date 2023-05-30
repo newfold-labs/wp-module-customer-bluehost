@@ -22,7 +22,11 @@
             "NewfoldLabs\\WP\\Module\\CustomerBluehost\\": "includes"
         },
         "files": [
-            "bootstrap.php"
+            "bootstrap.php",
+            "includes/AccessToken.php",
+            "includes/CustomerBluehost.php",
+            "includes/ResponseUtilities.php",
+            "includes/SiteMeta.php"
         ]
     },
     "require": {

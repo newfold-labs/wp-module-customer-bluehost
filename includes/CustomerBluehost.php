@@ -1,6 +1,8 @@
 <?php
 namespace NewfoldLabs\WP\Module\CustomerBluehost;
 
+use NewfoldLabs\WP\Module\CustomerBluehost\SiteMeta;
+use NewfoldLabs\WP\Module\CustomerBluehost\AccessToken;
 use NewfoldLabs\WP\Module\Data\Helpers\Transient;
 
 /**

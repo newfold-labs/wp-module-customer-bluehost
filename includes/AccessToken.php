@@ -8,6 +8,9 @@
 
 namespace NewfoldLabs\WP\Module\CustomerBluehost;
 
+use NewfoldLabs\WP\Module\CustomerBluehost\SiteMeta;
+use NewfoldLabs\WP\Module\CustomerBluehost\ResponseUtilities;
+
 /**
  * Class AccessToken
  *
